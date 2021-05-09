@@ -21,7 +21,6 @@ class AppDelegate: NSObject, UIApplicationDelegate{
            if (AuthApi.isKakaoTalkLoginUrl(url)) {
                return AuthController.handleOpenUrl(url: url, options: options)
            }
-        
            return false
        }
 }
