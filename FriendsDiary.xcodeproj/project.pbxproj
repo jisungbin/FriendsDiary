@@ -3,18 +3,24 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		3259D05C616AF3F1F5DA722F /* Pods_FriendsDiary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ED1D008B2F5D4001AF2EC11 /* Pods_FriendsDiary.framework */; };
 		9B5B4A10264850E300031B60 /* FriendsDiaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5B4A0F264850E300031B60 /* FriendsDiaryApp.swift */; };
-		9B5B4A12264850E300031B60 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5B4A11264850E300031B60 /* ContentView.swift */; };
+		9B5B4A12264850E300031B60 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5B4A11264850E300031B60 /* LoginView.swift */; };
 		9B5B4A14264850E400031B60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B5B4A13264850E400031B60 /* Assets.xcassets */; };
 		9B5B4A17264850E400031B60 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B5B4A16264850E400031B60 /* Preview Assets.xcassets */; };
 		9B6BB7262648524500858257 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6BB7252648524500858257 /* AppDelegate.swift */; };
+		9B7840552649A6C600AD22E7 /* ViewStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7840542649A6C600AD22E7 /* ViewStatus.swift */; };
+		9B7840592649A7DD00AD22E7 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7840582649A7DD00AD22E7 /* MainView.swift */; };
+		9B78405C2649ABC400AD22E7 /* SimpleToast in Frameworks */ = {isa = PBXBuildFile; productRef = 9B78405B2649ABC400AD22E7 /* SimpleToast */; };
+		9B78405E2649AC8000AD22E7 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B78405D2649AC8000AD22E7 /* MainViewModel.swift */; };
+		9B7840622649ADCF00AD22E7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B7840612649ADCF00AD22E7 /* GoogleService-Info.plist */; };
+		9B7840642649AEBC00AD22E7 /* ViewBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7840632649AEBC00AD22E7 /* ViewBinder.swift */; };
+		9B7840672649B67A00AD22E7 /* dolbomch.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B7840662649B67A00AD22E7 /* dolbomch.ttf */; };
 		9B95727C2648FE8300AE862B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B95727B2648FE8300AE862B /* User.swift */; };
-		9BF1DEDC26490E1C00E0005B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9BF1DEDB26490E1C00E0005B /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,13 +28,18 @@
 		4CE89040EDD510F4022301DF /* Pods-FriendsDiary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FriendsDiary.debug.xcconfig"; path = "Target Support Files/Pods-FriendsDiary/Pods-FriendsDiary.debug.xcconfig"; sourceTree = "<group>"; };
 		9B5B4A0C264850E300031B60 /* FriendsDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FriendsDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B5B4A0F264850E300031B60 /* FriendsDiaryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsDiaryApp.swift; sourceTree = "<group>"; };
-		9B5B4A11264850E300031B60 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9B5B4A11264850E300031B60 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		9B5B4A13264850E400031B60 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B5B4A16264850E400031B60 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9B5B4A18264850E400031B60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B6BB7252648524500858257 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9B7840542649A6C600AD22E7 /* ViewStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewStatus.swift; sourceTree = "<group>"; };
+		9B7840582649A7DD00AD22E7 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		9B78405D2649AC8000AD22E7 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		9B7840612649ADCF00AD22E7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9B7840632649AEBC00AD22E7 /* ViewBinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewBinder.swift; sourceTree = "<group>"; };
+		9B7840662649B67A00AD22E7 /* dolbomch.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = dolbomch.ttf; sourceTree = "<group>"; };
 		9B95727B2648FE8300AE862B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		9BF1DEDB26490E1C00E0005B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D8FDBAC2B4F31F6C4005FA08 /* Pods-FriendsDiary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FriendsDiary.release.xcconfig"; path = "Target Support Files/Pods-FriendsDiary/Pods-FriendsDiary.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -37,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B78405C2649ABC400AD22E7 /* SimpleToast in Frameworks */,
 				3259D05C616AF3F1F5DA722F /* Pods_FriendsDiary.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -82,14 +94,17 @@
 		9B5B4A0E264850E300031B60 /* FriendsDiary */ = {
 			isa = PBXGroup;
 			children = (
-				9BF1DEDB26490E1C00E0005B /* GoogleService-Info.plist */,
+				9B7840652649B61A00AD22E7 /* font */,
+				9B7840612649ADCF00AD22E7 /* GoogleService-Info.plist */,
+				9B7840562649A7BE00AD22E7 /* ui */,
 				9B95727A2648FE7900AE862B /* model */,
 				9B5B4A0F264850E300031B60 /* FriendsDiaryApp.swift */,
-				9B5B4A11264850E300031B60 /* ContentView.swift */,
 				9B5B4A13264850E400031B60 /* Assets.xcassets */,
 				9B5B4A18264850E400031B60 /* Info.plist */,
 				9B5B4A15264850E400031B60 /* Preview Content */,
 				9B6BB7252648524500858257 /* AppDelegate.swift */,
+				9B78405D2649AC8000AD22E7 /* MainViewModel.swift */,
+				9B7840632649AEBC00AD22E7 /* ViewBinder.swift */,
 			);
 			path = FriendsDiary;
 			sourceTree = "<group>";
@@ -102,10 +117,36 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		9B7840562649A7BE00AD22E7 /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				9B7840572649A7C800AD22E7 /* activity */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
+		9B7840572649A7C800AD22E7 /* activity */ = {
+			isa = PBXGroup;
+			children = (
+				9B5B4A11264850E300031B60 /* LoginView.swift */,
+				9B7840582649A7DD00AD22E7 /* MainView.swift */,
+			);
+			path = activity;
+			sourceTree = "<group>";
+		};
+		9B7840652649B61A00AD22E7 /* font */ = {
+			isa = PBXGroup;
+			children = (
+				9B7840662649B67A00AD22E7 /* dolbomch.ttf */,
+			);
+			path = font;
+			sourceTree = "<group>";
+		};
 		9B95727A2648FE7900AE862B /* model */ = {
 			isa = PBXGroup;
 			children = (
 				9B95727B2648FE8300AE862B /* User.swift */,
+				9B7840542649A6C600AD22E7 /* ViewStatus.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -128,6 +169,9 @@
 			dependencies = (
 			);
 			name = FriendsDiary;
+			packageProductDependencies = (
+				9B78405B2649ABC400AD22E7 /* SimpleToast */,
+			);
 			productName = FriendsDiary;
 			productReference = 9B5B4A0C264850E300031B60 /* FriendsDiary.app */;
 			productType = "com.apple.product-type.application";
@@ -155,6 +199,9 @@
 				Base,
 			);
 			mainGroup = 9B5B4A03264850E300031B60;
+			packageReferences = (
+				9B78405A2649ABC400AD22E7 /* XCRemoteSwiftPackageReference "SimpleToast" */,
+			);
 			productRefGroup = 9B5B4A0D264850E300031B60 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -169,9 +216,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B7840672649B67A00AD22E7 /* dolbomch.ttf in Resources */,
 				9B5B4A17264850E400031B60 /* Preview Assets.xcassets in Resources */,
 				9B5B4A14264850E400031B60 /* Assets.xcassets in Resources */,
-				9BF1DEDC26490E1C00E0005B /* GoogleService-Info.plist in Resources */,
+				9B7840622649ADCF00AD22E7 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,9 +272,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B78405E2649AC8000AD22E7 /* MainViewModel.swift in Sources */,
 				9B95727C2648FE8300AE862B /* User.swift in Sources */,
+				9B7840642649AEBC00AD22E7 /* ViewBinder.swift in Sources */,
+				9B7840592649A7DD00AD22E7 /* MainView.swift in Sources */,
 				9B6BB7262648524500858257 /* AppDelegate.swift in Sources */,
-				9B5B4A12264850E300031B60 /* ContentView.swift in Sources */,
+				9B7840552649A6C600AD22E7 /* ViewStatus.swift in Sources */,
+				9B5B4A12264850E300031B60 /* LoginView.swift in Sources */,
 				9B5B4A10264850E300031B60 /* FriendsDiaryApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -418,6 +470,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9B78405A2649ABC400AD22E7 /* XCRemoteSwiftPackageReference "SimpleToast" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sanzaru/SimpleToast.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9B78405B2649ABC400AD22E7 /* SimpleToast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9B78405A2649ABC400AD22E7 /* XCRemoteSwiftPackageReference "SimpleToast" */;
+			productName = SimpleToast;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9B5B4A04264850E300031B60 /* Project object */;
 }
