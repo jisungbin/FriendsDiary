@@ -32,3 +32,6 @@
 4. - [ ] 사진 업로드
 5. - [ ] 캘린더에 사진 표시
 6. - [ ] 완성
+
+# 디자인
+[pdf](https://github.com/jisungbin/FriendsDiary/blob/main/FriendsDiary.pdf)
