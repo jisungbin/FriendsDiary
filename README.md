@@ -27,8 +27,11 @@
 # 진행 상황
 
 1. - [x] 카카오 로그인 연동
-2. - [ ] Firebase 연동
-3. - [ ] 유저 모델, 친구 시스템
+2. - [x] Firebase 연동
+3. - [ ] 친구 시스템
 4. - [ ] 사진 업로드
 5. - [ ] 캘린더에 사진 표시
 6. - [ ] 완성
+
+# 디자인
+[pdf](https://github.com/jisungbin/FriendsDiary/blob/main/FriendsDiary.pdf)
