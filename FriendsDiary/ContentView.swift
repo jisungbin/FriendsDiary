@@ -32,7 +32,17 @@ struct ContentView: View {
                         }
                         else {
                             print("loginWithKakaoAccount() success.")
-                            _ = oauthToken
+                            UserApi.shared.me() { (user, error) in
+                                if let error = error {
+                                    print(error)
+                                } else {
+                                    let uid = user?.id
+                                    let name = user?.kakaoAccount?.profile?.nickname
+                                    let profileImageUrl = user?.kakaoAccount?.profile?.profileImageUrl
+                                    let user = User(uid: uid!, name: name!, profileImageUrl: profileImageUrl!)
+                                    
+                                }
+                            }
                         }
                     }
                 }

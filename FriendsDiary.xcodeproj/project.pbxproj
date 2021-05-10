@@ -13,6 +13,7 @@
 		9B5B4A14264850E400031B60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B5B4A13264850E400031B60 /* Assets.xcassets */; };
 		9B5B4A17264850E400031B60 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B5B4A16264850E400031B60 /* Preview Assets.xcassets */; };
 		9B6BB7262648524500858257 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6BB7252648524500858257 /* AppDelegate.swift */; };
+		9B95727C2648FE8300AE862B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B95727B2648FE8300AE862B /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		9B5B4A16264850E400031B60 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9B5B4A18264850E400031B60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B6BB7252648524500858257 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9B95727B2648FE8300AE862B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D8FDBAC2B4F31F6C4005FA08 /* Pods-FriendsDiary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FriendsDiary.release.xcconfig"; path = "Target Support Files/Pods-FriendsDiary/Pods-FriendsDiary.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,6 +80,7 @@
 		9B5B4A0E264850E300031B60 /* FriendsDiary */ = {
 			isa = PBXGroup;
 			children = (
+				9B95727A2648FE7900AE862B /* model */,
 				9B5B4A0F264850E300031B60 /* FriendsDiaryApp.swift */,
 				9B5B4A11264850E300031B60 /* ContentView.swift */,
 				9B5B4A13264850E400031B60 /* Assets.xcassets */,
@@ -94,6 +97,14 @@
 				9B5B4A16264850E400031B60 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9B95727A2648FE7900AE862B /* model */ = {
+			isa = PBXGroup;
+			children = (
+				9B95727B2648FE8300AE862B /* User.swift */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,6 +220,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B95727C2648FE8300AE862B /* User.swift in Sources */,
 				9B6BB7262648524500858257 /* AppDelegate.swift in Sources */,
 				9B5B4A12264850E300031B60 /* ContentView.swift in Sources */,
 				9B5B4A10264850E300031B60 /* FriendsDiaryApp.swift in Sources */,
