@@ -10,5 +10,5 @@ import Foundation
 struct User : Codable {
     var uid: Int64
     var name: String
-    var profileImageUrl: URL
+    var profileImageUrl: String
 }

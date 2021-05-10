@@ -14,6 +14,7 @@
 		9B5B4A17264850E400031B60 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B5B4A16264850E400031B60 /* Preview Assets.xcassets */; };
 		9B6BB7262648524500858257 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6BB7252648524500858257 /* AppDelegate.swift */; };
 		9B95727C2648FE8300AE862B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B95727B2648FE8300AE862B /* User.swift */; };
+		9BF1DEDC26490E1C00E0005B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9BF1DEDB26490E1C00E0005B /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		9B5B4A18264850E400031B60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B6BB7252648524500858257 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B95727B2648FE8300AE862B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		9BF1DEDB26490E1C00E0005B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D8FDBAC2B4F31F6C4005FA08 /* Pods-FriendsDiary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FriendsDiary.release.xcconfig"; path = "Target Support Files/Pods-FriendsDiary/Pods-FriendsDiary.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,6 +82,7 @@
 		9B5B4A0E264850E300031B60 /* FriendsDiary */ = {
 			isa = PBXGroup;
 			children = (
+				9BF1DEDB26490E1C00E0005B /* GoogleService-Info.plist */,
 				9B95727A2648FE7900AE862B /* model */,
 				9B5B4A0F264850E300031B60 /* FriendsDiaryApp.swift */,
 				9B5B4A11264850E300031B60 /* ContentView.swift */,
@@ -168,6 +171,7 @@
 			files = (
 				9B5B4A17264850E400031B60 /* Preview Assets.xcassets in Resources */,
 				9B5B4A14264850E400031B60 /* Assets.xcassets in Resources */,
+				9BF1DEDC26490E1C00E0005B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,7 @@
 import SwiftUI
 import KakaoSDKAuth
 import KakaoSDKUser
+import Firebase
 
 struct ContentView: View {
     var body: some View {
@@ -39,8 +40,13 @@ struct ContentView: View {
                                     let uid = user?.id
                                     let name = user?.kakaoAccount?.profile?.nickname
                                     let profileImageUrl = user?.kakaoAccount?.profile?.profileImageUrl
-                                    let user = User(uid: uid!, name: name!, profileImageUrl: profileImageUrl!)
+                                    let user = User(uid: uid!, name: name!, profileImageUrl: (profileImageUrl ?? URL(string: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png")!).absoluteString)
                                     
+                                    Firestore.firestore().collection("users").document(String(user.uid)).setData([
+                                        "uid": user.uid,
+                                        "name": user.name,
+                                        "profileImageUrl": user.profileImageUrl
+                                    ])
                                 }
                             }
                         }
