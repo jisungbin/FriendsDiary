@@ -177,6 +177,7 @@ code_sign_if_enabled() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/ExytePopupView/ExytePopupView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/KakaoSDKAuth/KakaoSDKAuth.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/KakaoSDKCommon/KakaoSDKCommon.framework"
@@ -191,6 +192,7 @@ fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/ExytePopupView/ExytePopupView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/KakaoSDKAuth/KakaoSDKAuth.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/KakaoSDKCommon/KakaoSDKCommon.framework"

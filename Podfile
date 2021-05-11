@@ -6,4 +6,5 @@ target 'FriendsDiary' do
   pod 'KakaoSDKUser'
   pod 'Firebase/Firestore'
   pod 'FirebaseFirestoreSwift'
+  pod 'ExytePopupView'
 end

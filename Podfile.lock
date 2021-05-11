@@ -219,6 +219,7 @@ PODS:
   - BoringSSL-GRPC/Implementation (0.0.7):
     - BoringSSL-GRPC/Interface (= 0.0.7)
   - BoringSSL-GRPC/Interface (0.0.7)
+  - ExytePopupView (0.0.12)
   - Firebase/CoreOnly (6.34.0):
     - FirebaseCore (= 6.10.4)
   - Firebase/Firestore (6.34.0):
@@ -297,6 +298,7 @@ PODS:
   - PromisesObjC (1.2.12)
 
 DEPENDENCIES:
+  - ExytePopupView
   - Firebase/Firestore
   - FirebaseFirestoreSwift
   - KakaoSDKCommon
@@ -307,6 +309,7 @@ SPEC REPOS:
     - abseil
     - Alamofire
     - BoringSSL-GRPC
+    - ExytePopupView
     - Firebase
     - FirebaseCore
     - FirebaseCoreDiagnostics
@@ -327,6 +330,7 @@ SPEC CHECKSUMS:
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
   BoringSSL-GRPC: 8edf627ee524575e2f8d19d56f068b448eea3879
+  ExytePopupView: 93525e88546df6001e7f68f90b66b2e21a27f887
   Firebase: c23a36d9e4cdf7877dfcba8dd0c58add66358999
   FirebaseCore: d3a978a3cfa3240bf7e4ba7d137fdf5b22b628ec
   FirebaseCoreDiagnostics: 770ac5958e1372ce67959ae4b4f31d8e127c3ac1
@@ -343,6 +347,6 @@ SPEC CHECKSUMS:
   nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
 
-PODFILE CHECKSUM: 4bc77db1f4aa08d5603d64109eea42c6c9c58019
+PODFILE CHECKSUM: 93463a206aefb4c6f1b976841de3a43d6a0d472c
 
 COCOAPODS: 1.10.1

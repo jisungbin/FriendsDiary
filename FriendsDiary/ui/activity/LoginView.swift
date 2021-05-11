@@ -9,6 +9,7 @@ import SwiftUI
 import KakaoSDKAuth
 import KakaoSDKUser
 import Firebase
+import ExytePopupView
 
 struct LoginView: View {
     @State private var showSuccessToast = false
@@ -17,20 +18,44 @@ struct LoginView: View {
     private let vm = MainViewModel.shared
     
     var body: some View {
-        VStack {
-            Button(action: {
-                login()
-            }) {
-                Text("카카오 로그인으로 시작하기")
-                    .padding()
-                    .font(.custom("MunhwajaeDolbom-Regular", size: 20))
-                    .foregroundColor(.white)
-                    .background(
-                        RoundedRectangle(cornerRadius: 30)
-                            .fill(Color.yellow)
-                            .shadow(color: .gray, radius: 2, x: 0, y: 2)
-                    )
-            }
+        ZStack {
+            VStack {
+                Text("FriendsDiary")
+                    .font(.custom("MunhwajaeDolbom-Regular", size: 30))
+                Image(uiImage: UIImage(named: "AppIcon")!)
+                    .resizable()
+                    .frame(width: 150, height: 150)
+                    .padding(.top, 30)
+            }.frame(
+                maxWidth: .infinity,
+                maxHeight: .infinity,
+                alignment: .top
+            ).padding(.top, 100)
+            VStack {
+                Button(action: {
+                    login()
+                }) {
+                    Text("카카오 로그인으로 시작하기")
+                        .padding()
+                        .font(.custom("MunhwajaeDolbom-Regular", size: 20))
+                        .foregroundColor(.white)
+                        .background(
+                            RoundedRectangle(cornerRadius: 30)
+                                .fill(Color.yellow)
+                                .shadow(color: .gray, radius: 2, x: 0, y: 2)
+                        )
+                }
+            }.frame(
+                maxWidth: .infinity,
+                maxHeight: .infinity,
+                alignment: .bottom
+            ).padding(.bottom, 100)
+        }
+        .popup(isPresented: $showSuccessToast, type: .floater(), position: .bottom, animation: Animation.spring(), autohideIn: 2) {
+            createBottomToast(backgroundColor: Color.blue)
+        }
+        .popup(isPresented: $showErrorToast, type: .floater(), position: .bottom, animation: Animation.spring(), autohideIn: 2) {
+            createBottomToast(backgroundColor: Color.pink)
         }
         .onOpenURL(perform: { url in
             if (AuthApi.isKakaoTalkLoginUrl(url)) {
@@ -38,6 +63,14 @@ struct LoginView: View {
             }
         })
         
+    }
+    
+    private func createBottomToast(backgroundColor: Color) -> some View {
+        Text(toastMessage)
+            .padding(15)
+            .background(backgroundColor)
+            .foregroundColor(.white)
+            .cornerRadius(30)
     }
     
     private func login() {
@@ -74,7 +107,6 @@ struct LoginView: View {
             } else {
                 showSuccessToast.toggle()
                 toastMessage = "환영합니다 :)"
-                print("AAA")
                 
                 let uid = user?.id
                 let name = user?.kakaoAccount?.profile?.nickname
@@ -94,7 +126,6 @@ struct LoginView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            LoginView()
             LoginView()
         }
     }
