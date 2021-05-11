@@ -22,9 +22,9 @@ struct LoginView: View {
             VStack {
                 Text("FriendsDiary")
                     .font(.custom("MunhwajaeDolbom-Regular", size: 30))
-                Image(uiImage: UIImage(named: "AppIcon")!)
+                Image("ic_launcher")
                     .resizable()
-                    .frame(width: 150, height: 150)
+                    .frame(width: 170, height: 170)
                     .padding(.top, 30)
             }.frame(
                 maxWidth: .infinity,
