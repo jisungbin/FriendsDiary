@@ -10,6 +10,7 @@ import KakaoSDKAuth
 import KakaoSDKUser
 import Firebase
 import ExytePopupView
+import FirebaseFirestoreSwift
 
 struct LoginView: View {
     @ObservedObject private var vm = MainViewModel.shared
@@ -109,11 +110,7 @@ struct LoginView: View {
                 let doc = Firestore.firestore().collection("users").document(String(user.uid))
                 doc.getDocument { (document, error) in
                     if !document!.exists {
-                        doc.setData([
-                            "uid": user.uid,
-                            "name": user.name,
-                            "profileImageUrl": user.profileImageUrl
-                        ])
+                       try! doc.setData(from: user)
                     }
                 }
                 

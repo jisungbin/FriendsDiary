@@ -51,6 +51,25 @@ struct MainView: View {
             .foregroundColor(.white)
             .cornerRadius(30)
     }
+    
+    private func diaryItemBind(item: Item) -> some View {
+        VStack {
+            HStack {
+                let owner = vm.getUserFromUid(uid: item.owner)
+                AsyncImage(
+                    url: URL(string: owner.profileImageUrl)!,
+                    placeholder: { Text("불러오는중...").font(.custom("MunhwajaeDolbom-Regular", size: 15)) },
+                    image: { Image(uiImage: $0).resizable() }
+                )
+                VStack {
+                    Text(owner.name).font(.custom("MunhwajaeDolbom-Regular", size: 20))
+                    Text(item.date.description).font(.custom("MunhwajaeDolbom-Regular", size: 15))
+                }
+            }.frame(maxWidth: .infinity, maxHeight: 30)
+            .padding(30)
+            Color.green.frame(width: .infinity, height: 270)
+        }.frame(maxWidth: .infinity, maxHeight: 400)
+    }
 }
 
 struct MainView_Previews: PreviewProvider {

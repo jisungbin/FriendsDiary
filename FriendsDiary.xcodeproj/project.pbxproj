@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		3259D05C616AF3F1F5DA722F /* Pods_FriendsDiary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ED1D008B2F5D4001AF2EC11 /* Pods_FriendsDiary.framework */; };
+		9B2AB175264A68F4004C5C01 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2AB174264A68F4004C5C01 /* Item.swift */; };
+		9B2AB178264A730A004C5C01 /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2AB177264A730A004C5C01 /* AsyncImage.swift */; };
+		9B2AB17A264A732E004C5C01 /* ImageCacheKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2AB179264A732E004C5C01 /* ImageCacheKey.swift */; };
+		9B2AB17C264A734C004C5C01 /* EnvironmentValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2AB17B264A734C004C5C01 /* EnvironmentValues.swift */; };
+		9B2AB17E264A7368004C5C01 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2AB17D264A7368004C5C01 /* ImageCache.swift */; };
+		9B2AB180264A7387004C5C01 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2AB17F264A7387004C5C01 /* ImageLoader.swift */; };
 		9B5B4A10264850E300031B60 /* FriendsDiaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5B4A0F264850E300031B60 /* FriendsDiaryApp.swift */; };
 		9B5B4A14264850E400031B60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B5B4A13264850E400031B60 /* Assets.xcassets */; };
 		9B5B4A17264850E400031B60 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B5B4A16264850E400031B60 /* Preview Assets.xcassets */; };
@@ -25,6 +31,12 @@
 /* Begin PBXFileReference section */
 		2ED1D008B2F5D4001AF2EC11 /* Pods_FriendsDiary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FriendsDiary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CE89040EDD510F4022301DF /* Pods-FriendsDiary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FriendsDiary.debug.xcconfig"; path = "Target Support Files/Pods-FriendsDiary/Pods-FriendsDiary.debug.xcconfig"; sourceTree = "<group>"; };
+		9B2AB174264A68F4004C5C01 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		9B2AB177264A730A004C5C01 /* AsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
+		9B2AB179264A732E004C5C01 /* ImageCacheKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheKey.swift; sourceTree = "<group>"; };
+		9B2AB17B264A734C004C5C01 /* EnvironmentValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentValues.swift; sourceTree = "<group>"; };
+		9B2AB17D264A7368004C5C01 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		9B2AB17F264A7387004C5C01 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		9B5B4A0C264850E300031B60 /* FriendsDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FriendsDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B5B4A0F264850E300031B60 /* FriendsDiaryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsDiaryApp.swift; sourceTree = "<group>"; };
 		9B5B4A13264850E400031B60 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -69,6 +81,18 @@
 				D8FDBAC2B4F31F6C4005FA08 /* Pods-FriendsDiary.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		9B2AB176264A72C0004C5C01 /* asyncimage */ = {
+			isa = PBXGroup;
+			children = (
+				9B2AB177264A730A004C5C01 /* AsyncImage.swift */,
+				9B2AB179264A732E004C5C01 /* ImageCacheKey.swift */,
+				9B2AB17B264A734C004C5C01 /* EnvironmentValues.swift */,
+				9B2AB17D264A7368004C5C01 /* ImageCache.swift */,
+				9B2AB17F264A7387004C5C01 /* ImageLoader.swift */,
+			);
+			path = asyncimage;
 			sourceTree = "<group>";
 		};
 		9B5B4A03264850E300031B60 = {
@@ -118,6 +142,7 @@
 		9B7840562649A7BE00AD22E7 /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				9B2AB176264A72C0004C5C01 /* asyncimage */,
 				9B7840572649A7C800AD22E7 /* activity */,
 			);
 			path = ui;
@@ -145,6 +170,7 @@
 			children = (
 				9B95727B2648FE8300AE862B /* User.swift */,
 				9B7840542649A6C600AD22E7 /* ViewStatus.swift */,
+				9B2AB174264A68F4004C5C01 /* Item.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -268,10 +294,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B2AB180264A7387004C5C01 /* ImageLoader.swift in Sources */,
+				9B2AB17A264A732E004C5C01 /* ImageCacheKey.swift in Sources */,
+				9B2AB178264A730A004C5C01 /* AsyncImage.swift in Sources */,
 				9B78405E2649AC8000AD22E7 /* MainViewModel.swift in Sources */,
+				9B2AB175264A68F4004C5C01 /* Item.swift in Sources */,
+				9B2AB17E264A7368004C5C01 /* ImageCache.swift in Sources */,
 				9B95727C2648FE8300AE862B /* User.swift in Sources */,
 				9B7840642649AEBC00AD22E7 /* ViewBinder.swift in Sources */,
 				9B7840592649A7DD00AD22E7 /* MainView.swift in Sources */,
+				9B2AB17C264A734C004C5C01 /* EnvironmentValues.swift in Sources */,
 				9B6BB7262648524500858257 /* AppDelegate.swift in Sources */,
 				9B7840552649A6C600AD22E7 /* ViewStatus.swift in Sources */,
 				9B78406C2649BCB000AD22E7 /* LoginView.swift in Sources */,
