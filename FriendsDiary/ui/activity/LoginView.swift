@@ -12,8 +12,7 @@ import Firebase
 import ExytePopupView
 
 struct LoginView: View {
-    @State private var showSuccessToast = false
-    @State private var showErrorToast = false
+    @State private var showToast = false
     @State private var toastMessage = ""
     @ObservedObject private var vm = MainViewModel.shared
     
@@ -51,11 +50,8 @@ struct LoginView: View {
                 alignment: .bottom
             ).padding(.bottom, 100)
         }
-        .popup(isPresented: $showSuccessToast, type: .floater(), position: .bottom, animation: Animation.spring(), autohideIn: 2) {
-            createBottomToast(backgroundColor: Color.blue)
-        }
-        .popup(isPresented: $showErrorToast, type: .floater(), position: .bottom, animation: Animation.spring(), autohideIn: 2) {
-            createBottomToast(backgroundColor: Color.pink)
+        .popup(isPresented: $showToast, type: .floater(), position: .bottom, animation: Animation.spring(), autohideIn: 2) {
+            createBottomToast()
         }
         .onOpenURL(perform: { url in
             if (AuthApi.isKakaoTalkLoginUrl(url)) {
@@ -64,10 +60,10 @@ struct LoginView: View {
         })
     }
     
-    private func createBottomToast(backgroundColor: Color) -> some View {
+    private func createBottomToast() -> some View {
         Text(toastMessage)
             .padding(15)
-            .background(backgroundColor)
+            .background(Color.pink)
             .foregroundColor(.white)
             .cornerRadius(30)
     }
@@ -76,7 +72,7 @@ struct LoginView: View {
         if (UserApi.isKakaoTalkLoginAvailable()) {
             UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
                 if let error = error {
-                    showErrorToast.toggle()
+                    showToast.toggle()
                     toastMessage = error.localizedDescription
                     print(error)
                 } else {
@@ -86,7 +82,7 @@ struct LoginView: View {
         } else {
             UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
                 if let error = error {
-                    showErrorToast.toggle()
+                    showToast.toggle()
                     toastMessage = error.localizedDescription
                     print(error)
                 }
@@ -100,27 +96,28 @@ struct LoginView: View {
     private func getMe() {
         UserApi.shared.me() { (user, error) in
             if let error = error {
-                showErrorToast.toggle()
+                showToast.toggle()
                 toastMessage = error.localizedDescription
                 print(error)
             } else {
-                showSuccessToast.toggle()
-                toastMessage = "환영합니다 :)"
-                
                 let uid = user?.id
                 let name = user?.kakaoAccount?.profile?.nickname
                 let profileImageUrl = user?.kakaoAccount?.profile?.profileImageUrl
                 let user = User(uid: uid!, name: name!, profileImageUrl: (profileImageUrl ?? URL(string: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png")!).absoluteString)
                 
-                Firestore.firestore().collection("users").document(String(user.uid)).setData([
-                    "uid": user.uid,
-                    "name": user.name,
-                    "profileImageUrl": user.profileImageUrl
-                ])
-                
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    vm.viewStatus = ViewStatus.Main
+                let doc = Firestore.firestore().collection("users").document(String(user.uid))
+                doc.getDocument { (document, error) in
+                    if !document!.exists {
+                        doc.setData([
+                            "uid": user.uid,
+                            "name": user.name,
+                            "profileImageUrl": user.profileImageUrl
+                        ])
+                    }
                 }
+                
+                vm.me = user
+                vm.viewStatus = ViewStatus.Main
             }
         }
     }
