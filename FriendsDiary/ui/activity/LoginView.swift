@@ -9,67 +9,73 @@ import SwiftUI
 import KakaoSDKAuth
 import KakaoSDKUser
 import Firebase
-import SimpleToast
 
 struct LoginView: View {
     @State private var showSuccessToast = false
     @State private var showErrorToast = false
     @State private var toastMessage = ""
     private let vm = MainViewModel.shared
-    private let toastOptions = SimpleToastOptions(
-        alignment: .bottom,
-        hideAfter: 2,
-        modifierType: .scale
-    )
     
     var body: some View {
         VStack {
-            Text("FriendsDiary")
-                .font(.system(size: 30, weight: .bold, design: .default))
-            Button(action : {
-                if (UserApi.isKakaoTalkLoginAvailable()) {
-                    UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
-                        if let error = error {
-                            print(error)
-                        }
-                        else {
-                            _ = oauthToken
-                        }
-                    }
-                } else {
-                    UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
-                        if let error = error {
-                            print(error)
-                        }
-                        else {
-                            
-                        }
-                    }
-                }
-            }){
+            Button(action: {
+                login()
+            }) {
                 Text("카카오 로그인으로 시작하기")
-                    .padding(10.0)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 10)
-                            .stroke(lineWidth: 2)
-                            .shadow(color: .gray, radius: 10)
+                    .padding()
+                    .font(.custom("MunhwajaeDolbom-Regular", size: 20))
+                    .foregroundColor(.white)
+                    .background(
+                        RoundedRectangle(cornerRadius: 30)
+                            .fill(Color.yellow)
+                            .shadow(color: .gray, radius: 2, x: 0, y: 2)
                     )
-                    .foregroundColor(.gray)
-                    .padding(.top, 50)
             }
-            .onOpenURL(perform: { url in
-                if (AuthApi.isKakaoTalkLoginUrl(url)) {
-                    _ = AuthController.handleOpenUrl(url: url)
+        }
+        .onOpenURL(perform: { url in
+            if (AuthApi.isKakaoTalkLoginUrl(url)) {
+                _ = AuthController.handleOpenUrl(url: url)
+            }
+        })
+        
+    }
+    
+    private func login() {
+        if (UserApi.isKakaoTalkLoginAvailable()) {
+            UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
+                if let error = error {
+                    showErrorToast.toggle()
+                    toastMessage = error.localizedDescription
+                    print(error)
+                } else {
+                    getMe()
                 }
-            })
+            }
+        } else {
+            UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
+                if let error = error {
+                    showErrorToast.toggle()
+                    toastMessage = error.localizedDescription
+                    print(error)
+                }
+                else {
+                    getMe()
+                }
+            }
         }
     }
     
-    private func startApp() {
+    private func getMe() {
         UserApi.shared.me() { (user, error) in
             if let error = error {
+                showErrorToast.toggle()
+                toastMessage = error.localizedDescription
                 print(error)
             } else {
+                showSuccessToast.toggle()
+                toastMessage = "환영합니다 :)"
+                print("AAA")
+                
                 let uid = user?.id
                 let name = user?.kakaoAccount?.profile?.nickname
                 let profileImageUrl = user?.kakaoAccount?.profile?.profileImageUrl
@@ -87,6 +93,9 @@ struct LoginView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        Group {
+            LoginView()
+            LoginView()
+        }
     }
 }
