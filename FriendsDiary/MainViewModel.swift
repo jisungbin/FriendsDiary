@@ -6,12 +6,13 @@
 //
 
 import Foundation
+import SwiftUI
 
-class MainViewModel {
+class MainViewModel: ObservableObject {
     static let shared = MainViewModel()
     
     var me: User!
-    var viewStatus = ViewStatus.Login
+    @Published var viewStatus = ViewStatus.Login
     
     private init() {}
 }

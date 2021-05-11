@@ -15,7 +15,7 @@ struct LoginView: View {
     @State private var showSuccessToast = false
     @State private var showErrorToast = false
     @State private var toastMessage = ""
-    private let vm = MainViewModel.shared
+    @ObservedObject private var vm = MainViewModel.shared
     
     var body: some View {
         ZStack {
@@ -62,7 +62,6 @@ struct LoginView: View {
                 _ = AuthController.handleOpenUrl(url: url)
             }
         })
-        
     }
     
     private func createBottomToast(backgroundColor: Color) -> some View {
@@ -118,6 +117,10 @@ struct LoginView: View {
                     "name": user.name,
                     "profileImageUrl": user.profileImageUrl
                 ])
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    vm.viewStatus = ViewStatus.Main
+                }
             }
         }
     }

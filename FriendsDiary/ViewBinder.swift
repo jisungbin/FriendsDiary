@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct ViewBinder: View {
-    let vm = MainViewModel.shared
+    @ObservedObject private var vm = MainViewModel.shared
     
     var body: some View {
         if vm.viewStatus == ViewStatus.Login {
             LoginView()
         } else {
-            LoginView() // todo
+            MainView()
         }
     }
 }
