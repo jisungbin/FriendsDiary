@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXAggregateTarget section */
@@ -17048,7 +17048,7 @@
 				};
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
-			compatibilityVersion = "Xcode 10.0";
+			compatibilityVersion = "Xcode 11.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -19061,7 +19061,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/abseil/abseil-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/abseil/abseil-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -19304,7 +19304,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/abseil/abseil-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/abseil/abseil-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -19830,7 +19830,7 @@
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/gRPC-C++";
 				IBSC_MODULE = grpcpp;
 				INFOPLIST_FILE = "Target Support Files/gRPC-C++/ResourceBundle-gRPCCertificates-Cpp-gRPC-C++-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				PRODUCT_NAME = "gRPCCertificates-Cpp";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -20086,7 +20086,7 @@
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/gRPC-C++";
 				IBSC_MODULE = grpcpp;
 				INFOPLIST_FILE = "Target Support Files/gRPC-C++/ResourceBundle-gRPCCertificates-Cpp-gRPC-C++-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				PRODUCT_NAME = "gRPCCertificates-Cpp";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
