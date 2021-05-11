@@ -12,9 +12,9 @@ import Firebase
 import ExytePopupView
 
 struct LoginView: View {
+    @ObservedObject private var vm = MainViewModel.shared
     @State private var showToast = false
     @State private var toastMessage = ""
-    @ObservedObject private var vm = MainViewModel.shared
     
     var body: some View {
         ZStack {
@@ -50,6 +50,7 @@ struct LoginView: View {
                 alignment: .bottom
             ).padding(.bottom, 100)
         }
+        .edgesIgnoringSafeArea(.all)
         .popup(isPresented: $showToast, type: .floater(), position: .bottom, animation: Animation.spring(), autohideIn: 2) {
             createBottomToast()
         }
@@ -123,7 +124,7 @@ struct LoginView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             LoginView()
