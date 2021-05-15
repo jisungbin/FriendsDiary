@@ -10,6 +10,7 @@ import ExytePopupView
 
 struct MainView: View {
     @ObservedObject private var vm = MainViewModel.shared
+    @State private var showBottomSheet = false
     @State private var showSuccessToast = true
     @State private var showErrorToast = false
     @State private var toastMessage = "환영합니다 :)"
@@ -17,7 +18,7 @@ struct MainView: View {
     var body: some View {
         ZStack {
             VStack {
-                Button(action: {}) {
+                Button(action: { showBottomSheet.toggle() }) {
                     Image(systemName: "plus")
                         .resizable()
                         .foregroundColor(.white)
@@ -41,6 +42,20 @@ struct MainView: View {
         }
         .popup(isPresented: $showErrorToast, type: .floater(), position: .bottom, animation: Animation.spring(), autohideIn: 2) {
             createBottomToast(Color.pink)
+        }
+        
+        BottomSheetModal(display: $showBottomSheet) {
+            VStack {
+                ZStack {
+                    HStack {
+                        Text("추억 사진 업로드")
+                    }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+                    HStack {
+                        Text("2021년 5월 15일")
+                    }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .trailing)
+                }.frame(maxWidth: .infinity, maxHeight: 50).padding()
+                Color.blue
+            }
         }
     }
     

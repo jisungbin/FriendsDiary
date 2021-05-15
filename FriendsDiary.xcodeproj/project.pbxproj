@@ -25,6 +25,8 @@
 		9B7840642649AEBC00AD22E7 /* ViewBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7840632649AEBC00AD22E7 /* ViewBinder.swift */; };
 		9B78406A2649BCA500AD22E7 /* dolbomch.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B7840692649BCA500AD22E7 /* dolbomch.ttf */; };
 		9B78406C2649BCB000AD22E7 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B78406B2649BCB000AD22E7 /* LoginView.swift */; };
+		9B883DF2264F59500032EA93 /* BottomSheetModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B883DF1264F59500032EA93 /* BottomSheetModal.swift */; };
+		9B883DF4264F5E240032EA93 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B883DF3264F5E240032EA93 /* ViewExtensions.swift */; };
 		9B95727C2648FE8300AE862B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B95727B2648FE8300AE862B /* User.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +52,8 @@
 		9B7840632649AEBC00AD22E7 /* ViewBinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewBinder.swift; sourceTree = "<group>"; };
 		9B7840692649BCA500AD22E7 /* dolbomch.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = dolbomch.ttf; sourceTree = "<group>"; };
 		9B78406B2649BCB000AD22E7 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		9B883DF1264F59500032EA93 /* BottomSheetModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetModal.swift; sourceTree = "<group>"; };
+		9B883DF3264F5E240032EA93 /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		9B95727B2648FE8300AE862B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D8FDBAC2B4F31F6C4005FA08 /* Pods-FriendsDiary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FriendsDiary.release.xcconfig"; path = "Target Support Files/Pods-FriendsDiary/Pods-FriendsDiary.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -116,6 +120,7 @@
 		9B5B4A0E264850E300031B60 /* FriendsDiary */ = {
 			isa = PBXGroup;
 			children = (
+				9B7840572649A7C800AD22E7 /* activity */,
 				9B7840682649BC8100AD22E7 /* font */,
 				9B7840612649ADCF00AD22E7 /* GoogleService-Info.plist */,
 				9B7840562649A7BE00AD22E7 /* ui */,
@@ -142,8 +147,8 @@
 		9B7840562649A7BE00AD22E7 /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				9B883DF0264F59300032EA93 /* bottomsheet */,
 				9B2AB176264A72C0004C5C01 /* asyncimage */,
-				9B7840572649A7C800AD22E7 /* activity */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -163,6 +168,15 @@
 				9B7840692649BCA500AD22E7 /* dolbomch.ttf */,
 			);
 			path = font;
+			sourceTree = "<group>";
+		};
+		9B883DF0264F59300032EA93 /* bottomsheet */ = {
+			isa = PBXGroup;
+			children = (
+				9B883DF1264F59500032EA93 /* BottomSheetModal.swift */,
+				9B883DF3264F5E240032EA93 /* ViewExtensions.swift */,
+			);
+			path = bottomsheet;
 			sourceTree = "<group>";
 		};
 		9B95727A2648FE7900AE862B /* model */ = {
@@ -304,9 +318,11 @@
 				9B7840642649AEBC00AD22E7 /* ViewBinder.swift in Sources */,
 				9B7840592649A7DD00AD22E7 /* MainView.swift in Sources */,
 				9B2AB17C264A734C004C5C01 /* EnvironmentValues.swift in Sources */,
+				9B883DF4264F5E240032EA93 /* ViewExtensions.swift in Sources */,
 				9B6BB7262648524500858257 /* AppDelegate.swift in Sources */,
 				9B7840552649A6C600AD22E7 /* ViewStatus.swift in Sources */,
 				9B78406C2649BCB000AD22E7 /* LoginView.swift in Sources */,
+				9B883DF2264F59500032EA93 /* BottomSheetModal.swift in Sources */,
 				9B5B4A10264850E300031B60 /* FriendsDiaryApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
