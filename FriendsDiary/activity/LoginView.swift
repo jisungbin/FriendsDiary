@@ -8,7 +8,6 @@
 import SwiftUI
 import KakaoSDKAuth
 import KakaoSDKUser
-import Firebase
 import ExytePopupView
 import FirebaseFirestoreSwift
 
@@ -107,7 +106,7 @@ struct LoginView: View {
                 let profileImageUrl = user?.kakaoAccount?.profile?.profileImageUrl
                 let user = User(uid: uid!, name: name!, profileImageUrl: (profileImageUrl ?? URL(string: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png")!).absoluteString)
                 
-                let doc = Firestore.firestore().collection("users").document(String(user.uid))
+                let doc = vm.db.collection("users").document(String(user.uid))
                 doc.getDocument { (document, error) in
                     if !document!.exists {
                        try! doc.setData(from: user)

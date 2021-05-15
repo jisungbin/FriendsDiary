@@ -7,12 +7,14 @@
 
 import Foundation
 import SwiftUI
+import Firebase
 
 class MainViewModel: ObservableObject {
     static let shared = MainViewModel()
     
     private var _items:[Item]!
     
+    let db = Firestore.firestore()
     var me: User!
     var users: [User]!
     var items: [Item]! {
