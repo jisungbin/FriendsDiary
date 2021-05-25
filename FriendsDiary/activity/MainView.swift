@@ -9,7 +9,7 @@ import SwiftUI
 import ExytePopupView
 
 struct MainView: View {
-    @State private var selectedImages = []
+    @State private var selectedImage: UIImage? = nil
     @ObservedObject private var vm = MainViewModel.shared
     @State private var showBottomSheet = false
     @State private var showImagePicker = false
@@ -47,7 +47,7 @@ struct MainView: View {
         }
         .sheet(isPresented: $showImagePicker) {
             ImagePickerView(sourceType: .photoLibrary) { image in
-                selectedImages.append(image)
+                selectedImage = image
             }
         }
         
@@ -57,7 +57,10 @@ struct MainView: View {
     }
     
     private func createBottomSheetModal() -> some View {
-        ZStack {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        let date = formatter.string(from: Date())
+        return ZStack {
             VStack {
                 ZStack {
                     HStack {
@@ -65,7 +68,7 @@ struct MainView: View {
                             .font(.custom("MunhwajaeDolbom-Regular", size: 20))
                     }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
                     HStack {
-                        Text("2021년 5월 15일")
+                        Text(date)
                             .padding()
                             .font(.custom("MunhwajaeDolbom-Regular", size: 15))
                             .foregroundColor(.white)
@@ -75,11 +78,13 @@ struct MainView: View {
                             )
                     }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .trailing)
                 }.padding().frame(maxWidth: .infinity, maxHeight: 50)
-                if !selectedImages.isEmpty {
-                    Image(uiImage: selectedImages.first as! UIImage)
-                        .frame(width: .infinity, height: .infinity, alignment: .center)
+                if selectedImage != nil {
+                    Image(uiImage: selectedImage!)
+                        .resizable()
+                        .frame(maxWidth: .infinity, maxHeight: 350)
                 } else {
-                    Color.blue
+                    Image(systemName: "photo")
+                        .frame(maxWidth: .infinity, maxHeight: 350)
                 }
             }.frame(maxWidth: .infinity, maxHeight: .infinity)
             VStack {
